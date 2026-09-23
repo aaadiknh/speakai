@@ -179,7 +179,7 @@ const PretestSpeaking = ({ lesson, onComplete, onNext, showPopup, saveScore, com
           };
         })
         .filter(item => item && item.answer.trim() !== "");
-      const res = await fetch("https://api.speakai.my.id/api/evaluate-speaking", {
+      const res = await fetch("/.netlify/functions/evaluateSpeaking", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

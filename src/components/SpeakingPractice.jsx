@@ -288,8 +288,7 @@ const SpeakingPractice = ({ lesson, milestone, onComplete, onNext, showPopup, sa
         answer: answers[i] || ""
       }));
       console.log("SEND TO BACKEND:", pairedQA);
-      const res = await fetch(
-        "https://api.speakai.my.id/api/practice-feedback",
+      const res = await fetch ("/.netlify/functions/practiceFeedback", 
         {
           method: "POST",
           headers: {
@@ -338,8 +337,7 @@ const SpeakingPractice = ({ lesson, milestone, onComplete, onNext, showPopup, sa
         question: q,
         answer: answers[i] || ""
       }));
-      const res = await fetch(
-        "https://api.speakai.my.id/api/evaluate-speaking",
+      const res = await fetch("/.netlify/functions/evaluateSpeaking", 
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
